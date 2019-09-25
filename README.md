@@ -14,18 +14,54 @@ You'll be given transactional data showing user purchases made on the app includ
 
 Keep in mind as well that someone using the app might make a purchase through the app without having received an offer or seen an offer.
 
-### Example
+### How should I run this project?
 
-To give an example, a user could receive a discount offer buy 10 dollars get 2 off on Monday. The offer is valid for 10 days from receipt. If the customer accumulates at least 10 dollars in purchases during the validity period, the customer completes the offer.
+First of all you need to install a virtual environment, activate it and then install the requirements.txt file 
+``` 
+virtualenv env -p python3
+source env/bin/activate
+pip install -r requirements.txt
+```
 
-However, there are a few things to watch out for in this data set. Customers do not opt into the offers that they receive; in other words, a user can receive an offer, never actually view the offer, and still complete the offer. For example, a user might receive the "buy 10 dollars get 2 dollars off offer", but the user never opens the offer during the 10 day validity period. The customer spends 15 dollars during those ten days. There will be an offer completion record in the data set; however, the customer was not influenced by the offer because the customer never viewed the offer.
+Once that you have installed the whole dependences you can just run jupyter notebook
+``` 
+jupyter notebook
+```
+and you are going to find 3 different notebooks:
+    
+     1. understanding_and_cleaning_data.ipynb
+     2. merging_data.ipynb
+     3. Analysis.ipynb
+     
+ 
+*understanding_and_cleaning_data.ipynb*
 
-### Cleaning
+Here you will find the process to clean the datasets and the creation of features that were needed in the next notebooks.
 
-This makes data cleaning especially important and tricky.
+*merging_data.ipynb* 
+In this file the data obtained before and the events of the offers and transactions are mixed up to make possible the analysis.
 
-You'll also want to take into account that some demographic groups will make purchases even if they don't receive an offer. From a business perspective, if a customer is going to make a 10 dollar purchase without an offer anyway, you wouldn't want to send a buy 10 dollars get 2 dollars off offer. You'll want to try to assess what a certain demographic group will buy when not receiving any offers.
+*Analysis.ipynb* 
+In this notebook you will some different clusters made using K-means to know the clients and their relation with the use of the offers.
 
-### Final Advice
+    
+## CONCLUSIONS (Also located in Analysis.ipynb file)
 
-Because this is a capstone project, you are free to analyze the data any way you see fit. For example, you could build a machine learning model that predicts how much someone will spend based on demographics and offer type. Or you could build a model that predicts whether or not someone will respond to an offer. Or, you don't need to build a machine learning model at all. You could develop a set of heuristics that determine what offer you should send to each customer (i.e., 75 percent of women customers who were 35 years old responded to offer A vs 40 percent from the same demographic to offer B, so send offer A). 
+Less than 10% of the clients spent more than 200 dollars without the motivation of offers. Those probably don't need offers to keep buying. But the rest of the clients could need a little push.
+
+That is the reason why this analysis is so important. Just to give you an idea, more than 30% of the total transactions are influenced by offers!
+
+There are 3 types of offers:
+- Informational
+- Discount
+- BOGO (Buy One Get One)
+Informational
+The informational offer is the one with less impact in the users. Sadly, 89% of the users offered with this didn't buy anything.
+
+BOGO
+The BOGO offer has much more impact than Informational, more than 50% of the offers are completed.But seems to be prefered by women rather than men.
+
+Discount
+The Discount offers are the ones that has more impact! 70% of the offers seen were completed. This is a pretty good number, and seems to be accepted by almost for any type of user. (Also this offer has a better acceptance by women)
+
+If the objective of the offers is to increase the increase the transactions made by the users Discount is the one to go with, followed by BOGO. Obviously the informational ones did not represents any money for the company, but also the impact is very very low. Probably another good think to analyze in the future could be which is the best way to comunicate the offers. Because this step is the reason for many incompleted offers.

@@ -44,8 +44,24 @@ In this file the data obtained before and the events of the offers and transacti
 *Analysis.ipynb* 
 In this notebook you will some different clusters made using K-means to know the clients and their relation with the use of the offers.
 
+### Problem approach
+
+The biggest problem in this analysis is the ambiguity of the data sets and the way that the offers and transactions are stored 
+without an id to make the relationship easier. As you should know, most of the times you spend 80% of your time cleaning 
+and preparing data and the other 20% for implementation.
+
+understanding_and_cleaning_data.ipynb and merging_data.ipynb files are completely focus on data cleaning and feature 
+engineering. 
+
+Once that the data is cleaned and ready for the analysis, the real game begins. 
+
+The approach selected to know which demographic groups respond best to which offer type was to create clusters using K-Means.
+I was inspired a little from the RFM technique, but I have to customized it for each type of offer. 
+Once that the users were clustered by their purchase behavior (related to each offer) was time to analyse their demographic information 
+to obtains conclusions about the clusters.
+ 
     
-## CONCLUSIONS (Also located in Analysis.ipynb file)
+### CONCLUSIONS (Also located in Analysis.ipynb file)
 
 Less than 10% of the clients spent more than 200 dollars without the motivation of offers. Those probably don't need offers to keep buying. But the rest of the clients could need a little push.
 

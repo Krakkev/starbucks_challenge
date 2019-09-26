@@ -81,3 +81,5 @@ Discount
 The Discount offers are the ones that has more impact! 70% of the offers seen were completed. This is a pretty good number, and seems to be accepted by almost for any type of user. (Also this offer has a better acceptance by women)
 
 If the objective of the offers is to increase the increase the transactions made by the users Discount is the one to go with, followed by BOGO. Obviously the informational ones did not represents any money for the company, but also the impact is very very low. Probably another good think to analyze in the future could be which is the best way to comunicate the offers. Because this step is the reason for many incompleted offers.
+
+This is a medium link about this challenge (https://medium.com/how-to-excel-as-soccer-player-according-to-fifa-19/starbucks-challenge-581eb4526685)
